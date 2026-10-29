@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #211f22;
+  background: #fffaf6;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 246, 0.96), rgba(251, 243, 237, 0.86)),
+    linear-gradient(90deg, rgba(191, 65, 104, 0.08), rgba(102, 120, 95, 0.06));
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(190, 111, 109, 0.5);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(191, 65, 104, 0.22);
+}
+
+@layer components {
+  .salon-card {
+    @apply rounded-lg bg-white/90 shadow-soft ring-1 ring-neutral-200/80 backdrop-blur;
+  }
+
+  .salon-card-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:shadow-salon hover:ring-champagne;
+  }
+
+  .salon-input {
+    @apply min-h-12 rounded-lg border border-neutral-300 bg-white px-4 font-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-blush focus:ring-4 focus:ring-blush/15;
+  }
+
+  .admin-panel {
+    @apply rounded-lg bg-white shadow-soft ring-1 ring-neutral-200/80;
+  }
+}
